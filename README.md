@@ -17,18 +17,21 @@
 ## Functional
 
 ### eVault
+* Carefully define and generalize the model of controlling eName (forms of binding)
+* Support deduplication of eNames and eVaults, perhaps with eMover
 * Evaluate the meta-envelopes model (flat) for complex topologies of data
 * Strictly adhere to declared ontology within a single meta-envelope
 * Explore dynamic GraphQL queries/mutation from schemas
 * Research ways to map (without loss of performance) knowledge graph inference and formalisms such as SPARQL to meta-envelopes 
 * Provide rigorous authorization layer
     - Define levels of access to resource for users/groups/platforms. Roughly like [wac](https://solidproject.org/TR/wac)
-    - Would be nice to be able to inherit ACls, but we don't have explicit hierarchies
+    - Would be nice to be able to inherit ACLs, but we don't have explicit hierarchies
     - Consider opt-in vs. opt-out systems
     - Can we support attribute based or fully semantic ACLs?
     - If not, we should define useful categories: e.g., reputation driven authorization, authenticated users, certified platforms
 * Improve platform's authentication with eVaults [details](platauth.md)
 * Involve linked data specialists to aid with ontology mapping (for adapters) and alignment in general
+* Explain how two mostly similar ontologies can be reconciled at the schema and eVault level
 * Add basic semantic transformation engine to eVault, allowing to have Big-Bang sweeps of semantic updates, e.g., after merging two popular ontologies.
 * Consider encryption of data at rest: with external keys, keys on eVault, keys in hardware
 * Initiate research for "rootless" provisioners -- where eVault provider has no backdoor to eVault envelopes
@@ -41,6 +44,7 @@
 
 ### Infrastructural platforms
 * eVault provisioners
+    - seemlessly support single eVault on VM (1st model) and shared tenancy (current model)
 * registries -- resolvers of eNames to eVault protocol endpoints
     - ideally, the data is stored on platform's eVault and can be 
 * ontology collections -- resolvers of eNames to schemas
